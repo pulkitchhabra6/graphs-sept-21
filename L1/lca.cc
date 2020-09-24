@@ -45,7 +45,7 @@ void dfs(int cur, int par, vi *adj)
 
 	for (int nb : adj[cur])
 		if (nb != par)
-			dfs(nb, par, adj);
+			dfs(nb, cur, adj);
 
 
 	out[cur] = (++tim);
@@ -73,7 +73,7 @@ int find_lca(int u, int v)
 
 int32_t main()
 {
-	FIO;
+	//FIO;
 	int n; cin >> n;
 
 	in.resize(n + 1);
@@ -89,6 +89,13 @@ int32_t main()
 	}
 
 	dfs(1, 1, adj);
+
+	w(q)
+	{
+		int u, v; cin >> u >> v;
+
+		cout << find_lca(u, v) << '\n';
+	}
 
 	return 0;
 }
