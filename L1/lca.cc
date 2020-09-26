@@ -58,7 +58,7 @@ void dfs(int cur, int par, vi *adj)
 
 bool is_first_anc_of_second(int u, int v)
 {
-	return in[u] < in[v] and out[u] > out[v];
+	return in[u] <= in[v] and out[u] => out[v];
 }
 
 int find_lca(int u, int v)
